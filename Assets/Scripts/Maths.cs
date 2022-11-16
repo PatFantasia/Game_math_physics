@@ -12,13 +12,17 @@ public class Maths : MonoBehaviour
 
     void CalculDistance()
     {
-        // recupère les coordonnées de position respectifs du moustique et du bébé
+        // recupère les coordonnées de position
         _mosquitoPosition = this.transform.position;
         _babyPosition = _baby.transform.position;
-        // {..}
-        Debug.Log("Calculons la distance entre le moustique et le bébé !");
-    }
 
+        float distance = Mathf.Sqrt(
+                            Mathf.Pow((_babyPosition.x - _mosquitoPosition.x), 2) + Mathf.Pow((_babyPosition.y - _mosquitoPosition.y), 2));
+
+        Debug.DrawLine(this.transform.position, _babyPosition, Color.white, 10); // affiche pendant 10sec un vecteur de couleur blanche du moustique au bébé
+        Debug.Log(" Calcul Distance " + distance);
+        Debug.Log(" Unity Distance " + Vector3.Distance(_mosquitoPosition, _babyPosition));
+    }
     // Update is called once per frame
     void Update()
     {
