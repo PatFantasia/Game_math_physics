@@ -10,7 +10,7 @@ public class Maths : MonoBehaviour
     Vector3 _mosquitoPosition;
     Vector3 _babyPosition;
 
-    void CalculDistance()
+    void CalculateDistance()
     {
         // recupère les coordonnées de position
         _mosquitoPosition = this.transform.position;
@@ -23,6 +23,20 @@ public class Maths : MonoBehaviour
         Debug.Log(" Calcul Distance " + distance);
         Debug.Log(" Unity Distance " + Vector3.Distance(_mosquitoPosition, _babyPosition));
     }
+
+     void CalculateAngle()
+    {
+        // Pour calculer le Cos -1, vous disposer de la méthode  Mathf.ACos()
+        // Vecteur directeur du gameObject moustique
+        Vector3 mosquitoDirectorVector =  this.transform.up;
+        // Pour le calcul de la norme d'un vecteur utilisez la propriété magnitude. Exemple : _babyPosition.magnitude;
+
+        // Vecteur allant du moustique vers le bébé
+        Vector3 targetVector = _baby.transform.position - this.transform.position;
+
+        Debug.Log("Donnez moi l'angle d'attack :) ! ");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -39,9 +53,10 @@ public class Maths : MonoBehaviour
         transform.Translate(0, translation, 0);
         transform.Rotate(0, 0, rotation);
 
-        if (Input.GetKeyDown(KeyCode.Space)) // lance la méthode CalculDistance si la touche "Espace" est appuyée
+        if (Input.GetKeyDown(KeyCode.Space)) // execute les différentes méthodes si la touche "Espace" est appuyée
         {
-            CalculDistance();
+            //CalculateDistance(); Désactivons pour le moment cette méthode
+            CalculateAngle();
         }
     }
 }
