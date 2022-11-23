@@ -9,6 +9,7 @@ public class Maths : MonoBehaviour
     float _rotationSpeed = 100f;
     Vector3 _mosquitoPosition;
     Vector3 _babyPosition;
+    bool _enableBiteAttack = false;
 
     float CalculateDistance()
     {
@@ -34,7 +35,7 @@ public class Maths : MonoBehaviour
 
         // si (V^W).z > 0 sens trignométrique direct sinon sensTrigonométrique indirecte
         int clockwise = CrossProduct(mosquitoDirectorVector, targetVector).z > 0 ? 1 : -1;
-        this.transform.Rotate(0, 0, angle * Mathf.Rad2Deg * clockwise); // Effectue une rotation sur l'axe z en fonction du sens trigonométrique
+        this.transform.Rotate(0, 0, angle * Mathf.Rad2Deg * clockwise); // Effectue une rotation sur l'axe z
 
         Debug.Log($"Unity's cross product : {Vector3.Cross(mosquitoDirectorVector, targetVector)} Versus our cross product {CrossProduct(mosquitoDirectorVector, targetVector)} ");
 
@@ -50,7 +51,13 @@ public class Maths : MonoBehaviour
         Vector3 CrossProduct = new Vector3(xCoordinate, yCoordinate, zCoordinate);
         return CrossProduct;
     }
-
+    void BiteAttack()
+    {
+        CalculateAngle();
+        this.transform.Translate(0, CalculateDistance() * Time.deltaTime, 0);
+        float distance = CalculateDistance();
+        if (CalculateDistance() < 0.5) _enableBiteAttack = false; // si la distance < 0.5 f, _enableBiteAttack passe à  false, 
+    }                                                             // stoppant ainsi l'exécution de BiteAttack()
     // Update is called once per frame
     void Update()
     {
@@ -66,10 +73,15 @@ public class Maths : MonoBehaviour
 
         transform.Translate(0, translation, 0);
         transform.Rotate(0, 0, rotation);
+        if (Input.GetKeyDown(KeyCode.A)) // Si la touche "A" est appuyée.
+        {
+            _enableBiteAttack = !_enableBiteAttack; // _enableBiteAttack prend la valeur opposée à sa précédente valeur
+        }
 
+        if (_enableBiteAttack) BiteAttack(); // execute BiteAttack si _enableBiteAttack = true
         if (Input.GetKeyDown(KeyCode.Space)) // execute les différentes méthodes si la touche "Espace" est appuyée
         {
-            //Debug.Log(" Distance : " + CalculateDistance());  
+            //Debug.Log(" Distance : " + CalculateDistance());   
             CalculateAngle();
         }
     }
