@@ -35,7 +35,6 @@ public class Maths : MonoBehaviour
         int clockwise = CrossProduct(mosquitoDirectorVector, targetVector).z > 0 ? 1 : -1;
         this.transform.Rotate(0, 0, angle * Mathf.Rad2Deg * clockwise); // Effectue une rotation sur l'axe z
 
-        //Debug.Log($"Unity's cross product : {Vector3.Cross(mosquitoDirectorVector, targetVector)} Versus our cross product {CrossProduct(mosquitoDirectorVector, targetVector)} ");
 
         //option de debogage pour visualiser les vecteurs
         Debug.DrawRay(this.transform.position, mosquitoDirectorVector * 5, Color.yellow, 5);

@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 840855821}
   - component: {fileID: 840855820}
   - component: {fileID: 840855822}
+  - component: {fileID: 840855824}
+  - component: {fileID: 840855823}
   m_Layer: 0
   m_Name: mosquito
   m_TagString: Untagged
@@ -220,6 +222,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baby: {fileID: 1269781962}
+--- !u!114 &840855823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840855819}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f605e8206d8a1104aab0059248049261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  rotationSpeed: 100
+  fuel: {fileID: 1269781962}
+  isDriving: 0
+--- !u!64 &840855824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840855819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1075192132
 GameObject:
   m_ObjectHideFlags: 0
