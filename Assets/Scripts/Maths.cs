@@ -56,7 +56,7 @@ public class Maths : MonoBehaviour
         float distance = CalculateDistance();
         float deadZoneLimit = 0.5f; // distance à partir laquelle il n'est plus utile de lancer la méthode
 
-        if (distance < 0.5) _enableBiteAttack = false; // si la distance < 0.5 f, _enableBiteAttack passe à  false, 
+        if (distance < deadZoneLimit) _enableBiteAttack = false; // si la distance < 0.5 f, _enableBiteAttack passe à  false, 
     }
 
     private void Update()
