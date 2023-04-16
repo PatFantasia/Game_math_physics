@@ -75,8 +75,13 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-
-/Assets/Game objects/unusedAssets/
+# Temp untracked
+/Assets/Scenes/CharacterController.unity
+/Assets/Scenes/CharacterController.unity.meta
+/Assets/Scripts/CameraRelativeMovement.cs
+/Assets/Scripts/CameraRelativeMovement.cs.meta
+/Assets/Scripts/ThirdCharacterController.cs
+/Assets/Scripts/ThirdCharacterController.cs.meta
 /Assets/unusedAssets/
 /Assets/Game objects/prefabTemplate/
 
