@@ -17,6 +17,6 @@ Les exercices de cette partie se trouvent sur CodePen.
 | [Produit Scalaire](https://medium.com/@patrice-de-souza/la-mathématique-appliquée-au-jeux-vidéo-le-produit-scalaire-e7d75e66baf4)| [Challenge](https://github.com/PatFantasia/Game_math_physics/tree/dot_product_starter)  |[Piste de Résolution](https://github.com/PatFantasia/Game_math_physics/tree/dot_product_solution) |                      
 | [Produit Vectoriel](https://medium.com/@patrice-de-souza) | [Solution](https://medium.com/p/ea271d80c07f/edit) |[Challenge](https://github.com/PatFantasia/Game_math_physics/tree/cross_product_starter)   |[Piste de Résolution](https://github.com/PatFantasia/Game_math_physics/tree/cross_product_challenge2_solution)   | 
 | [Le Game Loop](https://medium.com/@patrice-de-souza) | Néant  | Néant  | 
-| [Seek and Flee](https://medium.com/@patrice-de-souza) | En cours ... | 
-| [Pursue Behaviour](https://medium.com/@patrice-de-souza) | En cours ... |
+| [Seek and Flee](https://medium.com/@patrice-de-souza) | En cours ... | En cours ... |
+| [Pursue Behaviour](https://medium.com/@patrice-de-souza) | En cours ... |En cours ... |
  
